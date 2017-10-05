@@ -11,6 +11,18 @@ Autores:
 import sys, math
 from datetime import datetime, timedelta
 
+class Tarifa:
+    def __init__(self, diaS, diaF):
+        try:
+            assert((diaS >= 0) and (diaF >= 0))
+            
+        except:
+            print("La tarifa debe ser en numeros positivos.")
+            sys.exit()
+            
+        self.diaSemana = diaS
+        self.diaFin = diaF
+
 def calcularPrecio(tarifa, tiempoDeServicio):
     
     delta = tiempoDeServicio[1] - tiempoDeServicio[0]
