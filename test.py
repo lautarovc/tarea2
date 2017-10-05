@@ -27,6 +27,21 @@ class Test(unittest.TestCase):
         tarifa = Tarifa(10,15)
         desde = datetime(2017,10,1,0,0,0)
         hasta = datetime(2017,10,8,0,0,1)
+
+    # Servicio de Sabado a Martes (Usando ambas tarifas)
+    
+    def testMalicia1(self):
+        tarifa = Tarifa(10,15)
+        desde = datetime(2017,10,7,14,0,0)
+        hasta = datetime(2017,10,10,10,0,0)
+        
+    # Servicio Invertido
+    
+    def testMalicia2(self):
+        tarifa = Tarifa(10,15)
+        desde = datetime(2017,10,5,14,0,0)
+        hasta = datetime(2017,10,1,0,0,0)
+    
         
 if __name__ == "__main__":
     #import sys;sys.argv = ['', 'Test.testName']
