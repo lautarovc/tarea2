@@ -22,6 +22,42 @@ class Tarifa:
             
         self.diaSemana = diaS
         self.diaFin = diaF
+        
+   
+def diasDeSemana(tiempoDeServicio):
+    delta = tiempoDeServicio[1] - tiempoDeServicio[0]
+    
+    dias = []
+ 
+    for x in range(1, delta.days):
+        dias.append(tiempoDeServicio[0] + timedelta(x))
+     
+    suma = 0
+    
+    for dia in dias:
+        if (dia.weekday() < 5):
+            suma += 1
+        
+        
+    return suma
+
+def diasDeFin(tiempoDeServicio):
+    delta = tiempoDeServicio[1] - tiempoDeServicio[0]
+    
+    dias = []
+ 
+    for x in range(1, delta.days):
+        dias.append(tiempoDeServicio[0] + timedelta(x))
+     
+    suma = 0
+    
+    for dia in dias:
+        if (dia.weekday() >= 5):
+            suma += 1
+        
+        
+    return suma
+  
 
 def calcularPrecio(tarifa, tiempoDeServicio):
     
@@ -93,5 +129,3 @@ tiempos = [fromdate, todate]
 tarifa = Tarifa(10, 15)
 
 print(calcularPrecio(tarifa, tiempos))
-
-
