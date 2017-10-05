@@ -120,12 +120,11 @@ def calcularPrecio(tarifa, tiempoDeServicio):
     
     return precioTotal
         
-        
-fromdate = datetime(2017,10,8,23,59,2)
-todate = datetime(2017,10,9,9,1,2)
-
-tiempos = [fromdate, todate]
-    
 tarifa = Tarifa(10, 15)
 
+desde = datetime(2017,10,8,23,59,2)
+hasta = datetime(2017,10,9,9,1,2)
+
+tiempos = [desde, hasta]
+    
 print(calcularPrecio(tarifa, tiempos))
