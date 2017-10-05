@@ -14,6 +14,20 @@ from tarea2 import *
 
 class Test(unittest.TestCase):
 
+    # Duracion de servicio de 00:15:00
+    
+    def testBordeInferior(self):
+        tarifa = Tarifa(10,15)
+        desde = datetime(2017,10,1,2,0,0)
+        hasta = datetime(2017,10,1,2,15,0)
+        
+    # Duracion de servicio 7 dias exactos
+    
+    def testBordeSuperior(self):
+        tarifa = Tarifa(10,15)
+        desde = datetime(2017,10,1,0,0,0)
+        hasta = datetime(2017,10,8,0,0,0)
+        
     # Duracion de servicio de 00:14:59
     
     def testFueraDominioMinimo(self):
@@ -28,6 +42,20 @@ class Test(unittest.TestCase):
         desde = datetime(2017,10,1,0,0,0)
         hasta = datetime(2017,10,8,0,0,1)
 
+    # Duracion de servicio 7 dias con tarifa 0
+    
+    def testEsquinaInfDer(self):
+        tarifa = Tarifa(0,0)
+        desde = datetime(2017,10,1,0,0,0)
+        hasta = datetime(2017,10,8,0,0,0)
+        
+    # Duracion de servicio 15 min con tarifa 0    
+    
+    def testEsquinaInfIzq(self):
+        tarifa = Tarifa(0,0)
+        desde = datetime(2017,10,1,0,0,0)
+        hasta = datetime(2017,10,1,0,15,0) 
+
     # Servicio de Sabado a Martes (Usando ambas tarifas)
     
     def testMalicia1(self):
@@ -41,7 +69,6 @@ class Test(unittest.TestCase):
         tarifa = Tarifa(10,15)
         desde = datetime(2017,10,5,14,0,0)
         hasta = datetime(2017,10,1,0,0,0)
-    
         
 if __name__ == "__main__":
     #import sys;sys.argv = ['', 'Test.testName']
