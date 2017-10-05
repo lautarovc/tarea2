@@ -28,7 +28,19 @@ class Test(unittest.TestCase):
         desde = datetime(2017,10,1,0,0,0)
         hasta = datetime(2017,10,8,0,0,0)
 
-
+    # Duracion de servicio 7 dias con tarifa 0
+    
+    def testEsquinaInfDer(self):
+        tarifa = Tarifa(0,0)
+        desde = datetime(2017,10,1,0,0,0)
+        hasta = datetime(2017,10,8,0,0,0)
+        
+    # Duracion de servicio 15 min con tarifa 0    
+    
+    def testEsquinaInfIzq(self):
+        tarifa = Tarifa(0,0)
+        desde = datetime(2017,10,1,0,0,0)
+        hasta = datetime(2017,10,1,0,15,0) 
         
 if __name__ == "__main__":
     #import sys;sys.argv = ['', 'Test.testName']
